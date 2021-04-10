@@ -1,0 +1,165 @@
+body {
+  text-align: center;
+  margin: 10px auto;
+  max-width: 470px;
+}
+
+.container {
+  background-image: linear-gradient(-225deg, #e3fdf5 0%, #ffe6fa 100%);
+  height: max-content;
+  padding: 20px;
+  border-radius: 5px;
+}
+header {
+  padding: 20px;
+  font-family: monospace, cursive;
+}
+input {
+  border: 1px solid #cceabb;
+  border-radius: 6px;
+  text-align: center;
+}
+button {
+  border-radius: 10px;
+  padding: 3px;
+  background-color: #f7f7f7;
+  color: #3f3f44;
+  border: 1px solid #cceabb;
+  transition: all 200ms ease-in-out;
+}
+
+button:hover {
+  background-color: #cceabb;
+  color: #3f3f44;
+  opacity: 1.5;
+}
+
+.searchImg {
+  max-width: 20px;
+}
+.col-6 {
+  padding: 10px;
+  max-height: 400px;
+}
+.currentWeather {
+  width: 270px;
+  margin: 0px 10px;
+  padding: 15px 15px 0px 15px;
+  border: 1px dashed #dbc6eb;
+  border-radius: 6px;
+  font-size: 20px;
+  background-color: #f7f7f7;
+  color: #3f3f44;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  transition: all 200ms ease-in-out;
+}
+
+.currentWeather:hover {
+  background-color: rgba(219, 198, 235, 0.2);
+}
+h2 {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 50px;
+  color: #3f3f44;
+}
+h1 {
+  font-family: "Big Shoulders Stencil Display", cursive;
+  color: #3f3f44;
+}
+
+.temp-number {
+  font-size: 140px;
+  position: static;
+  margin: 0px 0px 0px 20px;
+  padding: 3px;
+}
+
+.temp-units {
+  position: static;
+  font-size: 19px;
+  color: #3f3f44;
+}
+
+#fahrenheit,
+#celsius {
+  color: #3f3f44;
+  transition: all 200ms ease-in-out;
+}
+#fahrenheit:hover,
+#celsius:hover {
+  color: #fdcb9e;
+}
+
+.desc {
+  font-style: normal;
+  font-size: 15px;
+  color: #3f3f44;
+}
+#description {
+  font-family: "Open Sans Condensed", sans-serif;
+  color: #fdcb9e;
+  font-size: 20px;
+}
+
+.weatherImg {
+  display: block;
+  margin: -120px 120px;
+  padding: 0px 10px;
+  font-size: 60px;
+}
+
+ul {
+  display: block;
+  margin: 0px;
+  padding: 10px 10px;
+  max-width: 100px;
+  border-radius: 5px;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 700;
+  font-size: 14px;
+  color: #3f3f44;
+  background-color: rgba(219, 198, 235, 0.1);
+}
+
+li {
+  list-style-type: none;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+ul .fas {
+  font-size: 30px;
+}
+
+.weekImg {
+  max-width: 30px;
+}
+
+.dateTime {
+  width: 270px;
+  border-radius: 5px;
+  margin: -30px 10px;
+  padding: 15px;
+  font-family: "Open Sans Condensed", sans-serif;
+  font-size: 19px;
+  color: #3f3f44;
+  background-color: rgba(219, 198, 235, 0.1);
+}
+
+footer {
+  padding: 40px 0px 0px 0px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 9px;
+  text-align: right;
+}
+
+#iconCredit,
+#github {
+  color: #3f3f44;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+#iconCredit:hover,
+#github:hover {
+  color: #fdcb9e;
+}
