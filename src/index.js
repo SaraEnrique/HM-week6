@@ -43,6 +43,11 @@ function searchLocTemp(response) {
   tempMax.innerHTML = `Max: ${Math.round(response.data.main.temp_max)}º`;
   let tempMin = document.querySelector("#tempMin");
   tempMin.innerHTML = `Min: ${Math.round(response.data.main.temp_min)}º`;
+  let weatherIcon = document.querySelector("#weatherIcon");
+  weatherIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 //GET WEATHER RESULT
