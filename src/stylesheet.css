@@ -110,6 +110,17 @@ h1 {
   font-size: 60px;
 }
 
+.extraData {
+  margin: 0 auto;
+  margin-top: -30px;
+  margin-bottom: 7px;
+}
+
+#humidity,
+#windSpeed {
+  font-size: 11px;
+}
+
 ul {
   display: block;
   margin: 0px;
