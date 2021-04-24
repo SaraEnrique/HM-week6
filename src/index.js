@@ -48,6 +48,12 @@ function searchLocTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
+  let windSpeed = document.querySelector("#windSpeed");
+  windSpeed.innerHTML = `| Wind speed: ${Math.round(
+    response.data.wind.speed
+  )}km/h`;
 }
 
 //GET WEATHER RESULT
