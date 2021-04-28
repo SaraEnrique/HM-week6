@@ -121,26 +121,27 @@ h1 {
   font-size: 11px;
 }
 
-ul {
+.weather-forecast {
   display: block;
   margin: 0px;
-  padding: 10px 10px;
+  padding: 10px 30px;
   max-width: 100px;
   border-radius: 5px;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 700;
+  text-align: center;
   font-size: 14px;
   color: #3f3f44;
   background-color: rgba(219, 198, 235, 0.1);
 }
 
-li {
-  list-style-type: none;
-  margin-top: 10px;
-  margin-bottom: 10px;
+#forecastColumn {
+  width: fit-content;
+  padding: 4px;
 }
-ul .fas {
-  font-size: 30px;
+.forecastTemp {
+  display: inline-flex;
+  font-size: 13px;
 }
 
 .weekImg {
@@ -150,7 +151,7 @@ ul .fas {
 .dateTime {
   width: 270px;
   border-radius: 5px;
-  margin: -30px 10px;
+  margin: 10px 10px;
   padding: 15px;
   font-family: "Open Sans Condensed", sans-serif;
   font-size: 19px;

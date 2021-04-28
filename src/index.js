@@ -26,8 +26,6 @@ if (minute < 10) {
 let currentDateTime = document.querySelector("#currentDateTime");
 currentDateTime.innerHTML = `${day} || ${hour}:${minute}`;
 
-//---> HM WEEK 5
-
 //DISPLAY SEARCHED INFO
 function searchLocTemp(response) {
   console.log(response.data);
@@ -111,3 +109,37 @@ function tempCel() {
 
 let celButton = document.querySelector("#celsius");
 celButton.addEventListener("click", tempCel);
+
+//FORECAST
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = ``;
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <section class="futureWeather">
+        <div class="forecast">
+        <div class="row">
+            <div class="col-2" id="forecastColumn">
+              <div class="forecastDate">${day}</div>
+              <img class="weekImg" src="https://img.icons8.com/dusk/64/000000/sun--v1.png" alt=""/>
+              <div class="forecastTemp">
+                <span class="tempMax">18º</span> 
+                <span class="tempMin">10º</span>
+              </div>
+            </div>
+           </div>
+         </div>
+      </section>
+    
+`;
+  });
+
+  forecastHTML = forecastHTML + ``;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
