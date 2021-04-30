@@ -75,20 +75,11 @@ h1 {
   padding: 3px;
 }
 
-.temp-units {
+.temp-units,
+#celsius {
   position: static;
   font-size: 19px;
   color: #3f3f44;
-}
-
-#fahrenheit,
-#celsius {
-  color: #3f3f44;
-  transition: all 200ms ease-in-out;
-}
-#fahrenheit:hover,
-#celsius:hover {
-  color: #fdcb9e;
 }
 
 .desc {

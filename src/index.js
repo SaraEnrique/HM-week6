@@ -81,8 +81,6 @@ function displayForecast(response) {
 // GET FORECAST
 
 function getForecast(coordinates) {
-  console.log(coordinates);
-
   let apiKey = "5cea9c14e750ffaee095052940fe6903";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
@@ -152,24 +150,3 @@ function getLocation(event) {
 
 let locButton = document.querySelector("#searchCurrent");
 locButton.addEventListener("click", getLocation);
-
-//SWITCH CELSIUS-FAHRENHEIT
-function tempFahr() {
-  let city = document.querySelector("#location-input").value;
-  let apiKey = "5cea9c14e750ffaee095052940fe6903";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
-  axios.get(apiUrl).then(searchLocTemp);
-}
-
-let farhButton = document.querySelector("#fahrenheit");
-farhButton.addEventListener("click", tempFahr);
-
-function tempCel() {
-  let city = document.querySelector("#location-input").value;
-  let apiKey = "5cea9c14e750ffaee095052940fe6903";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrl).then(searchLocTemp);
-}
-
-let celButton = document.querySelector("#celsius");
-celButton.addEventListener("click", tempCel);
