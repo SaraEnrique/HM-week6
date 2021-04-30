@@ -24,7 +24,69 @@ if (minute < 10) {
 }
 
 let currentDateTime = document.querySelector("#currentDateTime");
-currentDateTime.innerHTML = `${day} || ${hour}:${minute}`;
+currentDateTime.innerHTML = `${day} | ${hour}:${minute}`;
+
+//FORECAST
+
+function formatForecastDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = ``;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
+      <section class="futureWeather">
+        <div class="forecast">
+        <div class="row">
+            <div class="col-2" id="forecastColumn">
+              <div class="forecastDate">${formatForecastDay(
+                forecastDay.dt
+              )}</div>
+              <img class="weekImg" src="https://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt=""/>
+              <div class="forecastTemp">
+                <span class="tempMax">${Math.round(
+                  forecastDay.temp.max
+                )}º</span> 
+                <span class="tempMin">${Math.round(
+                  forecastDay.temp.min
+                )}º</span>
+              </div>
+            </div>
+           </div>
+         </div>
+      </section>
+    
+`;
+    }
+  });
+
+  forecastHTML = forecastHTML + ``;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+// GET FORECAST
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let apiKey = "5cea9c14e750ffaee095052940fe6903";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
 
 //DISPLAY SEARCHED INFO
 function searchLocTemp(response) {
@@ -52,6 +114,8 @@ function searchLocTemp(response) {
   windSpeed.innerHTML = `| Wind speed: ${Math.round(
     response.data.wind.speed
   )}km/h`;
+
+  getForecast(response.data.coord);
 }
 
 //GET WEATHER RESULT
@@ -109,37 +173,3 @@ function tempCel() {
 
 let celButton = document.querySelector("#celsius");
 celButton.addEventListener("click", tempCel);
-
-//FORECAST
-function displayForecast() {
-  let forecastElement = document.querySelector("#forecast");
-
-  let forecastHTML = ``;
-  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <section class="futureWeather">
-        <div class="forecast">
-        <div class="row">
-            <div class="col-2" id="forecastColumn">
-              <div class="forecastDate">${day}</div>
-              <img class="weekImg" src="https://img.icons8.com/dusk/64/000000/sun--v1.png" alt=""/>
-              <div class="forecastTemp">
-                <span class="tempMax">18º</span> 
-                <span class="tempMin">10º</span>
-              </div>
-            </div>
-           </div>
-         </div>
-      </section>
-    
-`;
-  });
-
-  forecastHTML = forecastHTML + ``;
-  forecastElement.innerHTML = forecastHTML;
-}
-
-displayForecast();
